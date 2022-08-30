@@ -2,20 +2,11 @@
   "name": "bryntum-scheduler-mocha-ts-sample",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@^5.1.2",
-    "@bryntum/scheduler-react": "^5.1.2",
-    "@types/node": "^12.6.8",
-    "@types/react-dom": "^16.8.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
-    "typescript": "^3.9.7"
-  },
   "scripts": {
-    "start": "cross-env NODE_OPTIONS='--max-old-space-size=8192' react-scripts start",
+    "start": "webpack-dev-server --hot --config webpack.dev.config.js",
     "build": "cross-env NODE_OPTIONS='--max-old-space-size=8192' react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run testBuild; mocha ./config/mocha-webpack-compiler.js -r tsconfig-paths/register ./build/transpiled/**/*.spec.js --reporter dot --exit",
+    "testBuild": "rm -rf ./build/transpiled/*; set -e; tsc --project tsconfig-for-tests.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,8 +25,53 @@
     ]
   },
   "devDependencies": {
+    "@types/chai": "^4.2.20",
+    "@types/cheerio": "^0.22.30",
+    "@types/classnames": "^2.2.3",
+    "@types/enzyme": "^3.10.9",
+    "@types/lodash": "^4.14.108",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^10.17.60",
+    "@types/react": "^16.14.25",
+    "@types/react-dom": "^16.9.3",
+    "@types/react-redux": "^7.1.19",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/redux-thunk": "^2.1.0",
+    "@types/sinon-chai": "^3.2.5",
     "babel-preset-react-app": "npm:@bryntum/babel-preset-react-app@^10.0.0",
+    "copy-webpack-plugin": "^8.1.1",
     "cross-env": "~7.0.2",
-    "sass": "~1.42.0"
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-watch": "^7.0.0",
+    "mocha": "^9.0.2",
+    "redux-mock-store": "^1.5.3",
+    "sass": "~1.42.0",
+    "source-map-loader": "^0.2.4",
+    "tsconfig-paths": "^3.9.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1"
+  },
+  "dependencies": {
+    "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@^5.1.2",
+    "@bryntum/scheduler-react": "^5.1.2",
+    "@types/node": "^12.6.8",
+    "@types/react-dom": "^16.8.5",
+    "moment": "^2.29.1",
+    "moment-timezone": "0.5.33",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.1.0",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.9.7",
+    "tsconfig-paths-webpack-plugin": "^3.5.1"
   }
 }

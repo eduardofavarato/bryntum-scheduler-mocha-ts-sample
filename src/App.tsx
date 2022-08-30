@@ -1,21 +1,15 @@
 /**
  * Main Application script
  */
-import React, { FunctionComponent, useRef } from 'react';
-import { BryntumScheduler } from '@bryntum/scheduler-react';
-import { schedulerConfig } from './SchedulerConfig';
-import './App.scss';
+import React, { FunctionComponent, useRef } from "react";
+import { BryntumScheduler } from "@bryntum/scheduler-react";
+import { peopleGanttChartConfig } from "./people/ganttChart/PeopleGanttChartConfig";
+import "./App.scss";
 
 const App: FunctionComponent = () => {
+  const scheduler = useRef<BryntumScheduler>(null);
 
-    const scheduler = useRef<BryntumScheduler>(null);
-
-    return (
-        <BryntumScheduler
-            ref = {scheduler}
-            {...schedulerConfig}
-        />
-    );
+  return <BryntumScheduler ref={scheduler} {...peopleGanttChartConfig} />;
 };
 
 // If you plan to use stateful React collections for data binding please check this guide

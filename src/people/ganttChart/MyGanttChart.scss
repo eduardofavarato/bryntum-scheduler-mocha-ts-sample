@@ -1,0 +1,18 @@
+@import 'src/assets/styles/mixins/grid';
+@import "src/assets/styles/mixins";
+
+.gridWrapper {
+    @include gridWrapper;
+}
+
+.infoColumn {
+    a {
+        display: flex;
+        align-items: center;
+        @include boldRegularSize;
+        color: #000;
+        span {
+            flex: 1;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:mocha/recommended",
+        "prettier",
+        "plugin:prettier/recommended"
+    ],
+    "env": {
+        "mocha": true,
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "plugins": [
+        "react",
+        "mocha",
+        "eslint-plugin-import-helpers"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "mocha/no-exclusive-tests": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+        "import-helpers/order-imports": [
+            "error",
+            {
+                "groups": [
+                    "module",
+                    "/^@/",
+                    ["parent", "sibling", "index"]
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "react/no-string-refs": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.spec.*"
+            ],
+            "rules": {
+                "@typescript-eslint/explicit-function-return-type": "off",
+                "@typescript-eslint/no-non-null-assertion": "off"
+            }
+        }
+    ]
+}

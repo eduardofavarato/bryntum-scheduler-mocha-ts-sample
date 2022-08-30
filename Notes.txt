@@ -1,0 +1,6 @@
+Notes:
+
+1) Replace -- import * as moment from 'moment-timezone'; --
+   with -- import moment from 'moment-timezone'; --
+
+2) Same for sinon, sinon-chai

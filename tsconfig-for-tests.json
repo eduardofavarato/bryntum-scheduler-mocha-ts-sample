@@ -1,0 +1,37 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@history": [
+        "./src/memoryHistory",
+        "./build/transpiled/memoryHistory"
+      ],
+      "@*": [
+        "./src*",
+        "./build/transpiled*"
+      ],
+      "@assets/*": [
+        "./assets*",
+        "./build/transpiled*"
+      ],
+      "@application/*": [
+        "./src/application/*",
+        "./src/application*",
+        "./build/transpiled/application/*",
+        "./build/transpiled/application*"
+      ],
+      "@contexts/*": [
+        "./src/application/contexts/*",
+        "./src/application/contexts*",
+        "./build/transpiled/application/contexts/*",
+        "./build/transpiled/application/contexts*"
+      ],
+      "@util/*": [
+        "./src/util/*",
+        "./src/util*",
+        "./build/transpiled/util/*",
+        "./build/transpiled/util*"
+      ]
+    }
+  }
+}

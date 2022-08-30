@@ -1,0 +1,67 @@
+@import "src/assets/styles/commonVariables/platformColors";
+/* Primary Palette */
+$masthead: #006983;
+$active-navbar: #1A4E62;
+$general-tags: #5E7380;
+$white: #FFFFFF;
+$inactive: #F8F8F8;
+$field-with-background: #F1F1F1;
+$rules: #E5E5E5;
+$disabled: #CFCFCF;
+$form-border: #A9A9A9;
+$super-title-gray: #4A4A4A;
+$black: #000000;
+$active: #0065BD;
+$form-selected: #00AEEF;
+$dynamic-list: $purple;
+$inactive-dynamic-list: #E7D0ED;
+$dark-grey: #393939;
+$disabled-grey: #757575;
+$disabled-button-grey: #7F7F7F;
+$gray-label: #5f7280;
+$baselineLinkHover: #222324;
+$baselineWhite: #f5f7fa;
+$starred-blue: #1f40e6;
+$even-lighter-gray: #f0f0f0;
+$help-modal-header-blue: #1b82f8;
+$almost-black: #333333;
+$blue: #2251FF;
+$accessibilityFocus: #38A9CD;
+
+/* Secondary Palette */
+$inactive-navbar: #66A5B5;
+$navbar-darkblue: #003737;
+$selected-border: #A2C9D4;
+$selected-background: #DFEDF0;
+$alert: #CD202C;
+$confirmed: #7BB50B;
+$softlock: #E37222;
+$warning: #E37222;
+$autocomplete: #FECF2F;
+$navbar-button: #406969;
+$requiredFormFieldRed: #BF0822;
+$modalFieldLabel: #70828E;
+
+$datePicker: #dce0e0;
+$datePickerCaret: #ddd;
+$highlightSoftlockedRow: #FFF4E0;
+$dashboardDarkBlue: #002d2d;
+$dashboardLightBlue: #67a5b5;
+$color-yellow: #FFD048;
+$color-deep-blue: #051C2C;
+$contextual-warning-yellow: #FFF3CE;
+$contextual-warning-text: #6A4F00;
+
+/* Alpha Palette*/
+$general-tags-half-opacity: rgba(94, 115, 128, 0.5);
+$inactive-navbar-half-opacity: rgba(102, 165, 181, 0.5);
+$confirmed-half-opacity: rgba(123, 181, 11, 0.5);
+$white-half-opacity: rgba(255, 255, 255, 0.5);
+$white-70-opacity: rgba(255, 255, 255, 0.3);
+$white-40-opacity: rgba(255, 255, 255, 0.4);
+$shadow: rgba(0, 0, 0, 0.5);
+$shadedBackground: rgba(0, 0, 0, 0.4);
+$darkShadow: rgba(0, 0, 0, 0.80);
+$lightShadow: rgba(0, 0, 0, 0.2);
+$black-50-opacity: rgba(0, 0, 0, 0.5);
+$black-70-opacity: rgba(0, 0, 0, 0.3);

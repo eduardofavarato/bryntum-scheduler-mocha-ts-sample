@@ -1,0 +1,33 @@
+@import "../commonVariables/colorPalette";
+@import "../breakpoints";
+
+$pdmNavbarHeight: 48px;
+$fullPageMinusNavBarHeight: calc(100% - 48px);
+$fullPageMinusNavBarAndMarginHeight: calc(100% - 58px);
+$bothPanelsMargin: 0 4px;
+
+@mixin gridWrapper {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: $fullPageMinusNavBarAndMarginHeight;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin gridContentWrapper {
+  display: flex;
+  height: $fullPageMinusNavBarAndMarginHeight;
+}
+
+@mixin gridBorderContainer {
+  height: 100%;
+}
+
+@mixin panelContainer {
+  background: $white;
+  margin: $bothPanelsMargin;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

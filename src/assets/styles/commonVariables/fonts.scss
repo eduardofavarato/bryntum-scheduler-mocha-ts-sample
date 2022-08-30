@@ -1,0 +1,27 @@
+$paragraph-small: 12px;
+$paragraph-base: 14px;
+$paragraph-large: 16px;
+$header-1: 48px;
+$header-2: 32px;
+$header-3: 24px;
+$header-4: 24px;
+
+$light: 300;
+$normal: 400;
+$bold: 700;
+$italic: italic;
+
+@mixin normalRegularSize {
+  font-size: $paragraph-base;
+  font-weight: $normal;
+}
+
+@mixin boldRegularSize {
+  font-size: $paragraph-base;
+  font-weight: $bold;
+}
+
+@mixin boldMediumSize {
+  font-size: $paragraph-base;
+  font-weight: $bold;
+}

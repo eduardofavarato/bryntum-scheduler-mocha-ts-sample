@@ -1,0 +1,256 @@
+@import "commonVariables/colorPalette";
+@import "commonVariables/fonts";
+@import "src/assets/styles/commonVariables/platformColors";
+@import "breakpoints";
+
+$gridMaximumWidth: 1024px;
+
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+@mixin verticalAlignMultilineText {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin gridSpacing {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@mixin gridRow {
+  position: relative;
+  @include normalRegularSize;
+}
+
+@mixin gridRowItem {
+  @include gridSpacing();
+  padding: 12px 4px 6px 8px;
+  line-height: 16px;
+  color: $general-tags;
+
+  &.is-sorted {
+    border-top: 2px solid $selected-background;
+    position: relative;
+    background-color: $selected-background;
+  }
+}
+
+$rowActionsWidth: 6%;
+$rowActionsWidthSmallerScreen: 9%;
+$draggableContentsWidth: 100% - $rowActionsWidth;
+$draggableContentsWidthSmallerScreen: 100% - $rowActionsWidthSmallerScreen;
+
+@mixin gridTag {
+  background: $field-with-background;
+  padding: 6px 8px;
+  min-height: 28px;
+  line-height: 16px;
+  display: inline-block;
+  color: $black;
+  @include normalRegularSize;
+}
+
+@mixin searchBox($height) {
+  position: relative;
+  min-height: $height;
+
+  input {
+    background: transparent;
+    border: none;
+    height: $height;
+    line-height: $height;
+    width: 1px;
+    display: inline-block;
+  }
+
+  &.focused input {
+    width: 180px;
+  }
+}
+
+@mixin insetFocusBorder($paddingTopBottom, $paddingLeftRight, $border-color: $form-border, $border-width: 1px) {
+  border: $border-width solid $border-color;
+  box-sizing: border-box;
+  padding: $paddingTopBottom $paddingLeftRight;
+  &:focus {
+    border: $border-width solid $form-selected;
+    outline: $border-width solid $form-selected;
+  }
+}
+
+@mixin insetBorderOnlyOnFocus() {
+  box-sizing: border-box;
+  &:focus {
+    border: 1px solid $form-selected;
+    outline: 1px solid $form-selected;
+  }
+}
+
+@mixin outsetFocusBorder($border-color: $form-border) {
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+
+  &:focus {
+    border: 1px solid $form-selected;
+    outline: 1px solid $form-selected;
+  }
+}
+
+@mixin additionalInformationHeader {
+  padding: 8px 16px;
+  background-color: $field-with-background;
+  font-weight: $bold;
+  font-size: $paragraph-base;
+  color: $super-title-gray;
+}
+
+@mixin actionCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@mixin noInformationProvidedMessage {
+  color: $form-border;
+  @include normalRegularSize;
+}
+
+@mixin buttonWithBackground {
+  background: $field-with-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > svg {
+    height: 16px;
+    fill: $active;
+    vertical-align: bottom;
+    align-self: center;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $black;
+
+    > svg {
+      fill: $white;
+    }
+  }
+}
+
+@mixin buttonWithIconNoText {
+  height: 32px;
+  width: 32px;
+  border-radius: 8px;
+
+  > svg {
+    height: 20px;
+  }
+
+  > span {
+    font-size: $paragraph-base;
+  }
+
+  &.iconOnly {
+    > svg {
+      height: 16px;
+    }
+  }
+}
+
+@mixin threeDotIcon {
+  fill: $form-border;
+  width: 16px;
+}
+
+@mixin loadingIndicatorWrapper  {
+  width: 100%;
+  height: 100%;
+  padding: 14px 8px;
+  margin: 0;
+  text-align: center;
+}
+
+@mixin whatsNewSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    max-width: 366px;
+  }
+
+  .whatsNewHeader {
+    font-weight: $bold;
+    color: $help-modal-header-blue;
+    font-size: $header-4;
+    line-height: 30px;
+    margin-bottom: 16px;
+    max-width: 620px;
+
+    @include mobile {
+      font-size:20px;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .whatsNewImage {
+    margin-bottom: 32px;
+
+    @include mobile {
+      width: 290px;
+    }
+  }
+
+  .whatsNewSubTitle {
+    color: $deep-blue;
+    font-weight: $bold;
+    line-height: 24px;
+  }
+
+  .whatsNewContent {
+    color: $super-title-gray;
+  }
+
+  .whatsNewContentBody {
+    color: $deep-blue;
+    font-weight: 600;
+    line-height: 18px;
+    font-size:16px;
+    max-width: 620px;
+
+    @include mobile {
+      font-size:14px;
+    }
+  }
+
+  .whatsNewFooter {
+    margin-top: 16px;
+    color: $deep-blue;
+    font-weight: $normal;
+  }
+
+  .whatsNewContentBodyListNumber {
+    color: $deep-blue;
+    font-weight: $bold;
+  }
+}
+
+@mixin accessibilityHighlightBorder {
+    border: 2px solid $accessibilityFocus;
+    border-radius: 4px;
+}
