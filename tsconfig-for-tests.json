@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@*": [
+        "./src*",
+        "./build/transpiled*"
+      ],
+      "@assets/*": [
+        "./assets*",
+        "./build/transpiled*"
+      ]
+    }
+  }
+}

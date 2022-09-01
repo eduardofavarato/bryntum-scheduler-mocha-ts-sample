@@ -1,0 +1,31 @@
+Differences:
+
+___ package.json _____________________________________________________________________________________________________________________________________
+Ours:                                                                       Bryntum:
+"@bryntum/scheduler-react": "^5.0.7",                                       "@bryntum/scheduler-react": "^5.1.2",
+"@bryntum/scheduler": "^5.0.7",                                             "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@^5.1.2",
+"@types/node": "^10.17.60",                                                 "@types/node": "^12.6.8",
+"@types/react-dom": "^16.9.3",                                              "@types/react-dom": "^16.8.5",
+"react": "^16.12.0",                                                        "react": "^17.0.2",
+"react-dom": "^16.12.0",                                                    "react-dom": "^17.0.2",
+"sass": "^1.49.9",                                                          "sass": "~1.42.0"
+"typescript": "^4.2.4",                                                     "typescript": "^3.9.7"
+N/A                                                                         "react-scripts": "^4.0.3",
+N/A                                                                         "cross-env": "~7.0.2",
+N/A                                                                         "babel-preset-react-app": "npm:@bryntum/babel-preset-react-app@^10.0.0",
+
+___ ts.config ________________________________________________________________________________________________________________________________________
+Ours:                                                                       Bryntum:
+"target": "es2019",                                                         "target": "es5",
+"lib": [ "dom", "es6", "es2016", "es2015.promise", "es2019" ],              "lib": [ "dom", "dom.iterable", "esnext" ],
+"module": "commonjs",                                                       "module": "esnext",
+
+
+Misc:
+1) "react-tooltip": "^3.9.2", gives weird error when running `npm i` --> "Invalid tag name ">=^16.0.0" of package "react@>=^16.0.0"
+2) "@types/sinon" is locked in version "4.3.3" in v2
+3) Reducers won't accept TypesafeAction
+4) FrontEndTypes gives error on "public props: P & ReduxProps;" due to "props has no initializer" - fixed by commenting "strict": true in tsconfig
+5) "webpack" and "webpack-cli" versions we use are not compatible .. not sure how it's even working
+6) Had to force "whatwg-url": "8.0.0" version to avoid incompatibility issue with jsdom
+7) Had to change to "mocha": "^9.2.2" to match package-lock.json from our project

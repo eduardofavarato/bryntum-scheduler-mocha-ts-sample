@@ -1,0 +1,61 @@
+{
+  "name": "bryntum-scheduler-mocha-ts-sample",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@^5.0.7",
+    "@bryntum/scheduler-react": "^5.0.7",
+    "@types/node": "^10.17.60",
+    "@types/react-dom": "^16.9.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^4.0.3",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "start": "cross-env NODE_OPTIONS='--max-old-space-size=8192' react-scripts start",
+    "eject": "react-scripts eject",
+    "test": "npm run cleanUp; npm run build; npm run mocha;",
+    "mocha": "mocha -r ts-node/register -r tsconfig-paths/register ./build/transpiled/**/*.spec.js --reporter dot --exit",
+    "cleanUp": "rm -rf ./build/transpiled/*;",
+    "build": "set -e; tsc --project tsconfig-for-tests.json"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.20",
+    "@types/enzyme": "^3.10.9",
+    "@types/mocha": "^8.2.3",
+    "@types/react": "^16.14.25",
+    "@types/sinon": "^4.3.3",
+    "@types/sinon-chai": "^3.2.5",
+    "babel-preset-react-app": "npm:@bryntum/babel-preset-react-app@^10.0.0",
+    "chai": "4.3.4",
+    "cross-env": "~7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jsdom": "16.2.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "^9.2.2",
+    "sass": "~1.42.0",
+    "sinon": "11.1.1",
+    "sinon-chai": "3.7.0",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.7.0",
+    "whatwg-url": "8.0.0"
+  }
+}

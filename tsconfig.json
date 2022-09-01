@@ -1,0 +1,81 @@
+{
+  "compilerOptions": {
+    //Different
+    //"target": "es5", //bryntum
+    "target": "es2019", //ours
+
+    //"lib": [ "dom",  "dom.iterable",  "esnext" ], //bryntum
+    "lib": [ "es6",  "es2016",  "es2015.promise",  "dom",  "es2019" ],
+
+    //"module": "esnext", //bryntum
+    "module": "commonjs",
+
+
+
+
+    //Both
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+
+    //Only bryntum - Those configs won't affect mocha tests
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    //"strict": true, // commenting to get rid of some errors
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    //"noEmit": true,
+
+
+    //Only ours
+    "outDir": "./build/transpiled",
+    "rootDir" : "src",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@*": [
+        "./src*",
+        "./build/transpiled*"
+      ],
+      "@assets/*": [
+        "./assets*",
+        "./build/transpiled*"
+      ],
+      "@util/*": [
+        "./src/util/*",
+        "./src/util*",
+        "./build/transpiled/util/*",
+        "./build/transpiled/util*"
+      ],
+      "@application/*": [
+        "./src/application/*",
+        "./src/application*",
+        "./build/transpiled/application/*",
+        "./build/transpiled/application*"
+      ]
+    }
+  },
+
+  //Only bryntum
+  "include": [
+    "src"
+  ],
+
+  //Only ours
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true
+  }
+}
