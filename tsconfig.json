@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src/**/*",
+    "node_modules/@bryntum/**/*"
+  ],
   "compilerOptions": {
     //Different
     //"target": "es5", //bryntum
@@ -32,7 +36,7 @@
 
     //Only ours
     "outDir": "./build/transpiled",
-    "rootDir" : "src",
+    "rootDir" : ".",
     "sourceMap": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -68,11 +72,6 @@
       ]
     }
   },
-
-  //Only bryntum
-  "include": [
-    "src"
-  ],
 
   //Only ours
   "awesomeTypescriptLoaderOptions": {
